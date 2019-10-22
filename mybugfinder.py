@@ -31,6 +31,7 @@ def parse_file(fname):
                 if javalang.tokenizer.Operator.is_infix(tokens[i+1]):
                     result.append(tokens[i+1].position)
 
+    print("There are {} bad string comparison in the program.".format(len(result)))
     print(result)
 
 
