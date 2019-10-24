@@ -5,6 +5,7 @@ from subprocess import check_output
 import os
 from analysis import analysis_ret_empty_array_rather_than_null, analysis_string_cmp
 
+
 def apply_analysis(analysis, filename):
     analysis(filename)
 
