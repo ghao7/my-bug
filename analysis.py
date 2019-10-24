@@ -13,6 +13,7 @@ def read_file(filename):
 
 
 def analysis_ret_empty_array_rather_than_null(filename):
+    ERROR_NAME = "ReturnEmptyArrayRatherThanNull"
     """
     see https://pmd.github.io/latest/pmd_rules_java_errorprone.html#returnemptyarrayratherthannull
     """
@@ -32,7 +33,7 @@ def analysis_ret_empty_array_rather_than_null(filename):
                         if ret_arr_flag:
                             try:
                                 if stmt.expression.value == 'null':
-                                    print('catches an error')
+                                    print('!!!', ERROR_NAME, 'at ' + filename + ':', stmt.position)
                             except AttributeError:
                                 pass
 
