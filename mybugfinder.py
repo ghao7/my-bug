@@ -3,15 +3,15 @@
 
 from subprocess import check_output
 from analysis import analysis_ret_empty_array_rather_than_null, analysis_string_cmp
-
+import time
 
 def apply_analysis(analysis, filename):
     return analysis(filename)
 
 
 if __name__ == '__main__':
+    start_time = time.time()
     test_dir = 'joda-time'
-
     output = check_output("find joda-time | grep \\\\.java$", shell=True).decode('utf-8')
     filenames = output.split('\n')[:-1]
     for filename in filenames:
@@ -22,3 +22,4 @@ if __name__ == '__main__':
             print("There are {} bad string comparison in the file.".format(len(string_result)))
             print(string_result)
 
+    print("--- %s seconds ---" % (time.time() - start_time))
