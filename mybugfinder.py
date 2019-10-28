@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*-
 
 from subprocess import check_output
-import os
 from analysis import analysis_ret_empty_array_rather_than_null, analysis_string_cmp
 
 
 def apply_analysis(analysis, filename):
-    analysis(filename)
+    return analysis(filename)
 
 
 if __name__ == '__main__':
@@ -18,6 +17,8 @@ if __name__ == '__main__':
     for filename in filenames:
         print('checking', filename)
         apply_analysis(analysis_ret_empty_array_rather_than_null, filename)
-        apply_analysis(analysis_string_cmp, filename)
-
+        string_result = apply_analysis(analysis_string_cmp, filename)
+        if len(string_result) > 0:
+            print("There are {} bad string comparison in the file.".format(len(string_result)))
+            print(string_result)
 

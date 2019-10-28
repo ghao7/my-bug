@@ -95,10 +95,11 @@ def analysis_string_cmp(fname):
                     continue
                 result.append(tokens[i + 1].position)
 
-    if len(result) > 0:
-        print("There are {} bad string comparison in the file.".format(len(result)))
-        print(result)
+    # if len(result) > 0:
+    #     print("There are {} bad string comparison in the file.".format(len(result)))
+    #     print(result)
 
+    return result
 
 if __name__ == '__main__':
     analysis_ret_empty_array_rather_than_null(sys.argv[1])
