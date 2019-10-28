@@ -17,6 +17,7 @@ def analysis_ret_empty_array_rather_than_null(filename):
     """
     see https://pmd.github.io/latest/pmd_rules_java_errorprone.html#returnemptyarrayratherthannull
     """
+    result = []
     content = read_file(filename)
     lines = content.split('\n')
     lines = [str(i + 1) + ' ' + line for i, line in enumerate(lines)]
@@ -36,6 +37,7 @@ def analysis_ret_empty_array_rather_than_null(filename):
                         if ret_arr_flag:
                             try:
                                 if stmt.expression.value == 'null':
+                                    result.append(stmt.position)
                                     print('-'*88)
                                     print('!!!', ERROR_NAME, 'at ' + filename + ':', stmt.position)
                                     print('source code:')
@@ -43,6 +45,9 @@ def analysis_ret_empty_array_rather_than_null(filename):
                                     print('-'*88)
                             except AttributeError:
                                 pass
+    return result
+
+
 
 
 def analysis_track_vars(filename):
