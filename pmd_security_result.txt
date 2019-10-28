@@ -1,0 +1,20 @@
+Oct 28, 2019 2:58:24 PM net.sourceforge.pmd.RuleSetFactory parseRuleReferenceNode
+WARNING: Use Rule name category/java/bestpractices.xml/ArrayIsStoredDirectly instead of the deprecated Rule name rulesets/java/sunsecure.xml/ArrayIsStoredDirectly. PMD 7.0.0 will remove support for this deprecated Rule name usage.
+Oct 28, 2019 2:58:24 PM net.sourceforge.pmd.RuleSetFactory parseRuleReferenceNode
+WARNING: Use Rule name category/java/bestpractices.xml/MethodReturnsInternalArray instead of the deprecated Rule name rulesets/java/sunsecure.xml/MethodReturnsInternalArray. PMD 7.0.0 will remove support for this deprecated Rule name usage.
+Oct 28, 2019 2:58:24 PM net.sourceforge.pmd.PMD processFiles
+WARNING: This analysis could be faster, please consider using Incremental Analysis: https://pmd.github.io/pmd-6.18.0/pmd_userdocs_incremental_analysis.html
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/example/org/joda/example/time/AgeCalculator.java:339:	The user-supplied array 'groups' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/example/org/joda/example/time/DateTimeBrowser.java:210:	The user-supplied array 'args' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/example/org/joda/example/time/DateTimeBrowser.java:563:	Returning 'colNames' may expose an internal array.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/example/org/joda/example/time/DateTimeBrowser.java:566:	Returning 'calcdValues' may expose an internal array.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/AbstractPartial.java:214:	The user-supplied array 'values' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/TimeOfDay.java:300:	The user-supplied array 'values' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/YearMonthDay.java:232:	The user-supplied array 'values' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/convert/ConverterSet.java:70:	The user-supplied array 'converters' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/format/DateTimeFormatterBuilder.java:2311:	The user-supplied array 'parsers' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/tz/DateTimeZoneBuilder.java:1346:	The user-supplied array 'transitions' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/tz/DateTimeZoneBuilder.java:1346:	The user-supplied array 'wallOffsets' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/tz/DateTimeZoneBuilder.java:1347:	The user-supplied array 'nameKeys' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/java/org/joda/time/tz/DateTimeZoneBuilder.java:1347:	The user-supplied array 'standardOffsets' is stored directly.
+/Users/james/fall-2019/software_analysis/hw4/my-bug-finder/joda-time/JodaTime/src/test/org/joda/test/time/AbstractTestDateTimeField.java:314:	Returning 'RESULT' may expose an internal array.
