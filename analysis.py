@@ -13,10 +13,14 @@ def read_file(filename):
 
 
 def analysis_ret_empty_array_rather_than_null(filename):
+    ERROR_NAME = "ReturnEmptyArrayRatherThanNull"
     """
     see https://pmd.github.io/latest/pmd_rules_java_errorprone.html#returnemptyarrayratherthannull
     """
-    ast = javalang.parse.parse(read_file(filename))
+    content = read_file(filename)
+    lines = content.split('\n')
+    lines = [str(i + 1) + ' ' + line for i, line in enumerate(lines)]
+    ast = javalang.parse.parse(content)
     for cls in ast.types:
         for member in cls.body:
             if isinstance(member, MethodDeclaration):
@@ -32,16 +36,16 @@ def analysis_ret_empty_array_rather_than_null(filename):
                         if ret_arr_flag:
                             try:
                                 if stmt.expression.value == 'null':
-                                    print('catches an error')
+                                    print('-'*88)
+                                    print('!!!', ERROR_NAME, 'at ' + filename + ':', stmt.position)
+                                    print('source code:')
+                                    print('\n'.join(lines[stmt.position[0] - 3 : stmt.position[0] + 1]))
+                                    print('-'*88)
                             except AttributeError:
                                 pass
 
 
 def analysis_track_vars(filename):
-    """
-    see https://pmd.github.io/latest/pmd_rules_java_errorprone.html#returnemptyarrayratherthannull
-    """
-    # print(ast.types[1])
     ast = javalang.parse.parse(read_file(filename))
     for cls in ast.types:
         cls_var_record = {}
